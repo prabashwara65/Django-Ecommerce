@@ -21,6 +21,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('' , include('products_urls' , namespace='products'),)
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
+    path('', include('products.urls', namespace='products')),  # Corrected 'products_urls' to 'products.urls'
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
