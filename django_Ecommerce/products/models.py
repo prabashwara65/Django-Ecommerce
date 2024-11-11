@@ -13,7 +13,7 @@ class Category(models.Model):  # Corrected Models to Model
     def __str__(self):
         return self.name
     
-
+#This model for Product
 class Product(models.Model):  # Corrected Models to Model
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
