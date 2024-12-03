@@ -13,6 +13,8 @@ def product_list(request, category_slug=None):
         category = get_object_or_404(Category, slug=category_slug)
         products = products.filter(category=category)
 
+    
+    # after this return function all items gonna showing on index page 
     return render(request, 'products/product/list.html', {
         'category': category,
         'products': products,
